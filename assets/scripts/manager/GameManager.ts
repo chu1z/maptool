@@ -52,7 +52,7 @@ export class GameManager extends cc.Component {
 
         camera.getComponent<Camera>(Camera).setFoucs(focus);
 
-        MapManager.ins.initTiles(2, 2560, 2048, LayerManager.ins.getLayer(Layer.SCENE_MAP));
+        MapManager.ins.initTiles(1, 1536, 1024, LayerManager.ins.getLayer(Layer.SCENE_MAP));
 
 
         var entity = new AnimationEntity();

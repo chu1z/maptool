@@ -15,7 +15,7 @@ export class AnimationEntity extends Entity {
         }
 
         this.display.scale = 3;
-        cc.loader.loadRes("/model/ck01", cc.SpriteAtlas, (err, res: cc.SpriteAtlas) => {
+        cc.assetManager.loadAny("/model/ck01", cc.SpriteAtlas, (err, res: cc.SpriteAtlas) => {
             this.fram.spriteFrames = res.getSpriteFrames();
             this.fram.duration = 0.2;
             this.fram.playLoop();

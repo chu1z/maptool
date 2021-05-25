@@ -53,7 +53,7 @@ class MapLoaderInfo {
     async doLoad(dic: string) {
         //TODO 资源整理
         return new Promise((resolve, reject) => {
-            cc.loader.load(resUrl + "map512/" + dic + "/" + this.index + ".jpg", (err, res) => {
+            cc.assetManager.loadRemote(resUrl + "map512/" + dic + "/" + this.index + ".jpg", (err, res) => {
                 if (err) {
                     cc.log(err);
                     return;

@@ -44,7 +44,7 @@ export class UIManager extends Singleton<UIManager>() {
         }
 
         return new Promise((resolve, reject) => {
-            cc.loader.loadRes(this.binds[id].path, cc.Prefab, (err, asset) => {
+            cc.resources.load(this.binds[id].path, cc.Prefab, (err, asset) => {
                 if (err) {
                     cc.warn(`[资源加载] 错误 ${err}`);
                     return;

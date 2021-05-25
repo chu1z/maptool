@@ -27,17 +27,17 @@ export default class ConfigManager extends Singleton<ConfigManager>() {
         let t = this;
 
         return new Promise((resolve, reject) => {
-            cc.loader.load(resUrl + "0config.json", (err, res) => {
+            cc.assetManager.loadRemote<cc.JsonAsset>(resUrl + "0config.json", (err, res) => {
                 if (err) {
                     cc.log(err);
                     return;
                 }
 
-                for (let fieldName in res) {
-                    t[fieldName] = res[fieldName];
+                for (let fieldName in res.json) {
+                    t[fieldName] = res.json[fieldName];
                 }
 
-                cc.loader.releaseAsset(res);
+                cc.assetManager.releaseAsset(res);
                 resolve();
             })
         });

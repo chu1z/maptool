@@ -36,7 +36,7 @@ export class GameManager extends cc.Component {
         var focus = new cc.Node();
         focus.addComponent(Focus);
 
-        cc.loader.loadRes("images/triangle", cc.SpriteFrame, (err, asset) => {
+        cc.resources.load("images/triangle", cc.SpriteFrame, (err, asset: cc.SpriteFrame) => {
             focus.addComponent(cc.Sprite).spriteFrame = asset;
         });
 
